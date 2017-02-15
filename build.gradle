@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'init.Main'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'lambdahello'
+    version =  '0.1.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.21'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.20'
+	
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+	compile 'org.json:json:+'
+	compile 'paymark.microservice:oepayment.client:2.18.+'    
+	
+    testCompile "junit:junit:4.12"
+}
